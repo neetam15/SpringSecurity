@@ -2,6 +2,7 @@ package demo.learn.controllers;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,8 +27,16 @@ public class AppController {
 	@ResponseBody
 	public String hello(){
 		String msg = "iN hELLO";
-		
-		
+		String encoded=new BCryptPasswordEncoder().encode("admin@123");
+		msg += "\n";
+		msg += encoded; 		
+		return msg;		
+	}
+	
+	@RequestMapping("/adminPg")
+	@ResponseBody
+	public String adminPg(){
+		String msg = "iN adminPg";	
 		return msg;		
 	}
 }

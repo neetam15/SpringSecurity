@@ -31,7 +31,17 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.security:spring-security-test')
-	compile('org.springframework.boot:spring-security-test')
+	//testCompile('org.springframework.boot:spring-boot-starter-test')
+	//testCompile('org.springframework.security:spring-security-test')
+	//compile('org.springframework.boot:spring-security-test')
+	
+	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.8.RELEASE'
+	
+	// https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp >> for basic datasource
+	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.2.2'
+	
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
+	
 }
